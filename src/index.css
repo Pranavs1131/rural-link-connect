@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* RuralLink Design System - Agricultural Portal
+Earth tones, high contrast, mobile-first accessibility
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - clean whites and warm earth tones */
+    --background: 48 100% 99%;
+    --foreground: 25 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 25 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 25 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Agricultural green for trust and growth */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 142 76% 32%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm earth brown */
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 25 25% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Light earth tones */
+    --muted: 45 20% 95%;
+    --muted-foreground: 25 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Sunset orange for highlights */
+    --accent: 32 95% 88%;
+    --accent-foreground: 25 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --warning: 43 89% 38%;
+    --warning-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Interactive elements */
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 142 76% 36%;
 
-    --radius: 0.5rem;
+    /* Gradients for visual appeal */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(120 60% 45%));
+    --gradient-sunset: linear-gradient(135deg, hsl(32 95% 65%), hsl(25 85% 55%));
+    --gradient-earth: linear-gradient(180deg, hsl(48 100% 99%), hsl(45 20% 95%));
+
+    /* Shadows with warm undertones */
+    --shadow-soft: 0 4px 12px -2px hsl(25 25% 15% / 0.1);
+    --shadow-medium: 0 8px 24px -4px hsl(25 25% 15% / 0.15);
+    --shadow-strong: 0 16px 40px -8px hsl(25 25% 15% / 0.2);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +79,55 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode agricultural theme */
+    --background: 25 25% 8%;
+    --foreground: 48 100% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 25% 10%;
+    --card-foreground: 48 100% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 25% 10%;
+    --popover-foreground: 48 100% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary remains agricultural green but adjusted for dark */
+    --primary: 142 76% 42%;
+    --primary-foreground: 25 25% 8%;
+    --primary-hover: 142 76% 38%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary - darker earth brown */
+    --secondary: 35 15% 15%;
+    --secondary-foreground: 48 100% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Muted - dark earth tones */
+    --muted: 35 10% 12%;
+    --muted-foreground: 45 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent - muted sunset for dark mode */
+    --accent: 32 30% 15%;
+    --accent-foreground: 48 100% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status colors adjusted for dark */
+    --success: 142 76% 42%;
+    --success-foreground: 25 25% 8%;
+    --warning: 43 89% 45%;
+    --warning-foreground: 25 25% 8%;
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 48 100% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Interactive elements */
+    --border: 35 10% 18%;
+    --input: 35 10% 18%;
+    --ring: 142 76% 42%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 42%), hsl(120 60% 50%));
+    --gradient-sunset: linear-gradient(135deg, hsl(32 70% 40%), hsl(25 65% 35%));
+    --gradient-earth: linear-gradient(180deg, hsl(25 25% 8%), hsl(35 10% 12%));
+
+    /* Dark shadows */
+    --shadow-soft: 0 4px 12px -2px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 24px -4px hsl(0 0% 0% / 0.4);
+    --shadow-strong: 0 16px 40px -8px hsl(0 0% 0% / 0.5);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
